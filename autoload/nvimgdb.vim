@@ -361,7 +361,7 @@ function! nvimgdb#Spawn(backend, client_cmd)
   " Create new tab for the debugging view
   tabnew
   " create horizontal split to display the current file
-  sp
+  vs
   " go to the bottom window and spawn gdb client
   wincmd j
   enew | let gdb._client_id = termopen(a:client_cmd, gdb)
