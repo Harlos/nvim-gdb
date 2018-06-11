@@ -363,7 +363,7 @@ function! nvimgdb#Spawn(backend, client_cmd)
   " create horizontal split to display the current file
   vs
   " go to the bottom window and spawn gdb client
-  wincmd j
+  wincmd l
   enew | let gdb._client_id = termopen(a:client_cmd, gdb)
   let gdb._client_buf = bufnr('%')
   let t:gdb = gdb
