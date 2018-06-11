@@ -306,6 +306,8 @@ function! s:OnWinEnter()
   " If this isn't a debugging session, nothing to do
   if !exists('t:gdb') | return | endif
 
+  " Disable folding
+  set nofoldenable
   " If the tabpage should contain at least two windows, finish debugging
   " otherwise.
   if tabpagewinnr(tabpagenr(), '$') == 1
@@ -382,8 +384,6 @@ function! nvimgdb#Spawn(backend, client_cmd)
 
   call s:DefKeymapVars()
   call s:SetTKeymaps()
-  " Disable folding
-  set nofoldenable
   " Start inset mode in the GDB window
   normal i
 endfunction
