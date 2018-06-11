@@ -382,6 +382,8 @@ function! nvimgdb#Spawn(backend, client_cmd)
 
   call s:DefKeymapVars()
   call s:SetTKeymaps()
+  " Disable folding
+  set nofoldenable
   " Start inset mode in the GDB window
   normal i
 endfunction
